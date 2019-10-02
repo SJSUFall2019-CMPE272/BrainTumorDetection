@@ -1,6 +1,6 @@
 # CMPE 272- Project Ideas
 
-###Team Members
+### Team Members
 1. Sachin Karve
 2. Manovikas Ramaswamy
 3. Ritwik Jadhav
