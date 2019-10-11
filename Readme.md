@@ -16,7 +16,7 @@
   
 ## Architecture Diagram
 
-
+![System Architecture Diagram](https://github.com/SJSUFall2019-CMPE272/BrainTumorDetection/blob/master/SystemArchitecture.jpg)
 
 ## Technology stack
 
