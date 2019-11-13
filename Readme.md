@@ -14,6 +14,19 @@
   
   We plan to develop a supervised Machine learning model by using the brain tumor image dataset. It will train itself to identify the tumorous MRI scans in real time and give out the results on our web application. This project can be extended to detect the presence of Lung cancer using CT scan images of lungs.
   
+## Design thinking
+
+### Persona/Target users
+
+1. Insurance companies - With the health expenditure in the US increasing YoY and the never before reliance on insurance companies in health industry. It is time also to start verifying the medical conditions and do some sanity checks to verify insurance claims.
+2. Patients 
+* Insured patients can upload this MRI as an attachment to medical record submission for insurance reimbursement, this can reduce hassle by reducing the documenation needed to file a claim. 
+* Patients in developing countries(Where there are scarcity of good doctors) can use this facility to identify tumors in early stage and can deicde on further treatments required.
+
+### Hill statement
+  
+Improving the access to early tumor detection mechanism to people for whom finding specialised doctors are difficult. Simplyfy the insurance claim work-flow and thus reducing hassle in both patient and insurance companies side.
+
 ## Architecture Diagram
 
 ![System Architecture Diagram](https://github.com/SJSUFall2019-CMPE272/BrainTumorDetection/blob/master/SystemArchitecture.jpg)
