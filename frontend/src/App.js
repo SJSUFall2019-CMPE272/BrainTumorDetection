@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
+import Main from './components/Main.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Brain Tumor Detection
-        </p>
-
-      </header>
+      <Main />
     </div>
   );
 }
