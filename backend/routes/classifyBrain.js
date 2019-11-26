@@ -1,51 +1,89 @@
 const express = require("express");
 const router = express.Router();
-const VisualRecognitionV3 = require('watson-developer-cloud/visual-recognition/v3');
+const VisualRecognitionV3 = require('ibm-watson/visual-recognition/v3');
+const { IamAuthenticator } = require('ibm-watson/auth');
 const multer = require('multer');
-const fs = require('fs');
-const path = require('path');
-const { apiKey } = require("../config");
+const aws = require('aws-sdk');
+const multerS3 = require('multer-s3');
+const config = require("../config");
+
+aws.config.update({
+    secretAccessKey: config.secretAccessKey,
+    accessKeyId: config.accessKeyId,
+    region: config.region
+});
+
+const s3 = new aws.S3();
+
+const upload = multer({
+    storage: multerS3({
+        s3: s3,
+        acl: 'public-read',
+        bucket: 'braintumor272',
+        key: function (req, file, cb) {
+            //console.log(file);
+            cb(null, Date.now().toString()+".jpeg"); //use Date.now() for unique file keys
+        }
+    })
+}).single("image");
+
+
 
 var visualRecognition = new VisualRecognitionV3({
     version: '2019-11-11',
-    iam_apikey: apiKey
+    authenticator: new IamAuthenticator({
+        apikey: config.apikey,
+      }),
+      url: config.url,
 });
 
-const brainImageStorage = multer.diskStorage({
-    destination: path.join(__dirname, '..') + '/public/uploads/brain',
-    filename: (req, file, cb) => {
-        cb(null, 'brain-' + Date.now() + path.extname(file.originalname));
-    }
-});
-
-const brainUploads = multer({
-    storage: brainImageStorage,
-    limits: { fileSize: 50000000 },
-}).single("image");
+const listClassifiers = () => {
+    const listClassifiersParams = {
+        verbose: true,
+      };
+      
+    visualRecognition.listClassifiers(listClassifiersParams)
+    .then(response => {
+        const classifiers = response.result;
+        console.log(JSON.stringify(classifiers, null, 2));
+    })
+    .catch(err => {
+        console.log('error:', err);
+    });
+}
 
 router.post("/", (req, res) => {
-    brainUploads(req, res, function (err) {
+    upload(req, res, function (err) {
         if (!err) {
-            var images_file = fs.createReadStream(path.join(__dirname, '..') + '/public/uploads/brain/' + req.file.filename);
-            var classifier_ids = ["MRIDetectionModel_1899614081"];
-            var threshold = 0.6;
+            //console.log(req.file)
             
             var params = {
-                images_file: images_file,
-                classifier_ids: classifier_ids,
-                threshold: threshold
+                url: req.file.location,
+                classifierIds: config.classifier_ids,
+                threshold: config.threshold
             };
-            
+
+            //listClassifiers(); //To list all available classifiers(Which are essentially trained models).
+
             visualRecognition.classify(params, function (err, response) {
                 if (err) {
                     console.log(err);
+                    res
+                        .status(500)
+                        .send(err);
                 } else {
-                    console.log(response)
+                    const classifiedImages = response.result;
+                    console.log(JSON.stringify(classifiedImages.images[0].classifiers[0].classes[0], null, 2));
+                    res
+                        .status(200)
+                        .send(JSON.stringify(classifiedImages.images[0].classifiers[0].classes[0], null, 2));
                 }
             });
         }
         else {
-            console.log("Error!");
+            res
+                .status(500)
+                .send(err);
         }
     });
 });
