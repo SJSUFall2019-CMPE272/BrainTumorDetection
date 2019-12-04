@@ -1,4 +1,4 @@
-# Brain Tumor detection using MRI Images and Lung cancer detection
+# Brain Tumor detection using MRI Images
 
 ### Team Members:
 1. Sachin Karve
@@ -39,5 +39,6 @@ Improving the access to early tumor detection mechanism to people for whom findi
 1. IBM Watson
 2. React.js
 3. Node.js
-4. IBM Bluemix/AWS EC2
+4. IBM Bluemix
+5. AWS EC2
 
