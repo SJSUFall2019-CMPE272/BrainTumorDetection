@@ -1,0 +1,24 @@
+.brain-navbar .tumor-image {
+    width: 10%;
+}
+
+.brain-navbar .header {
+    font-size: 36px;
+    margin: auto;
+}
+
+.brain-navbar .navrow {
+    margin-left: 60%;
+}
+
+.brain-navbar .heading-1 {
+    margin-left: 300%;
+    font-size: 26px;
+    margin-top: 50%;
+}
+
+.brain-navbar .heading-2 {
+    margin-left: 400%;
+    font-size: 26px;
+    margin-top: 50%;
+}
