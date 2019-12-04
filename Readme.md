@@ -32,7 +32,7 @@ Improving the access to early tumor detection mechanism to people for whom findi
 
 ## Architecture Diagram
 
-![System Architecture Diagram](https://github.com/SJSUFall2019-CMPE272/BrainTumorDetection/blob/master/SystemArchitecture.jpg)
+![System Architecture Diagram](https://github.com/SJSUFall2019-CMPE272/BrainTumorDetection/blob/master/SystemArchitecture.png)
 
 ## Technology stack
 
