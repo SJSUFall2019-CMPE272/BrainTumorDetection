@@ -1,0 +1,41 @@
+.brain-diagnose .jumbotron {
+    width: 50%;
+    background-color: #F7F8F9;
+    margin-left: 25%;
+    margin-top: 3%;
+    border: 2px solid gainsboro;
+    height: auto;
+}
+
+.brain-diagnose .custom-file {
+    width: 100%;
+    margin-left: 50%;
+}
+
+.brain-diagnose .card {
+    margin-left: 50%;
+    width: 100%;
+}
+
+.brain-diagnose .upload {
+    margin-left: 65%;
+    width: 70%;
+}
+
+.modal-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+}
+
+.brain-diagnose .preview-image {
+    max-width: 50%;
+}
+
+.brain-diagnose .preview-body {
+    width: 90%;
+}
+
+.brain-diagnose .card-header {
+    margin-left: 50%;
+    width: 100%;
+}
