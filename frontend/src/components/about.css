@@ -1,0 +1,26 @@
+.about-page {
+    background-image: url('./wallpaper3.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 5%;
+}
+
+.about-page .about-page-card-1 {
+    margin-top: 10%;
+    width: 60%;
+    height: 70%;
+    margin-left: 23%;
+}
+
+.about-page .about-page-card-2 {
+    margin-top: 10%;
+    width: 60%;
+    height: 90%;
+    margin-left: 23%;
+}
+
+.about-page .card-title {
+    border-bottom: 1px solid lightgray;
+}
