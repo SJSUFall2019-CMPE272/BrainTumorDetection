@@ -45,6 +45,16 @@ class Home extends Component {
                 <Navbar/>
                 <div className = "home-1">
                     <div className = "row m-auto">
+                    <div className = "col-sm-12">
+                            <div class="card homepage-card-1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Are you an insurance company ?</h5>
+                                    <hr/>
+                                    <p class="card-text">We are providing the technology to verify and streamline customer health insurance claims.</p>
+                                    <a href="/about" class="btn btn-outline-secondary">Learn more</a>
+                                </div>
+                            </div> 
+                        </div>
                         <div className = "col-sm-12">
                             <div class="card homepage-card-1">
                                 <div class="card-body">

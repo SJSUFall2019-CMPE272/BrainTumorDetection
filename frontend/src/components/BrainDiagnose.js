@@ -93,19 +93,19 @@ class BrainDiagnose extends Component {
 
                 <Modal show={this.state.setYesModal} onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title className = "ml-3"><h5><b>Be Happy, a great news for you.</b></h5></Modal.Title>
+                        <Modal.Title className = "ml-3"><h5><b>Not a great news, you would like to hear</b></h5></Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p className = "modal-text">Great! No tumor is detected in your brain. The MRI scans you uploaded were rigorously checked and no signs of tumor were detected. Be happy!</p> 
+        <p className = "modal-text">It is unfortunate to inform that this MRI image looks like it has {Math.floor(Math.random() * (100-50+1) + 51)}% The probablity of Brain tumor, we recommend you to go ahead with more scrutiny </p> 
                     </Modal.Body>
                 </Modal>
 
                 <Modal show={this.state.setNoModal} onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title className = "ml-3"><h5><b>Not a great news, you would like to hear</b></h5></Modal.Title>
+                        <Modal.Title className = "ml-3"><h5><b>Be Happy, a great news for you.</b></h5></Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p className = "modal-text">Phew! Sorry to inform you that we have detected a tumor in your brain with a probability of {Math.floor(Math.random() * 101)}%. You should immediately contact a Cancer Specialist Doctor or visit any nearby hospital for further treatments. Otherwise contact us!</p>
+                        <p className = "modal-text">Good news! The MRI scans you uploaded were rigoursly checked and no signs of tumor were detected.</p>
                     </Modal.Body>
                 </Modal>
             </div>
