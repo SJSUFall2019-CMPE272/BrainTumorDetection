@@ -1,5 +1,5 @@
 const config = {
-    backendServer: "http://localhost:3001"
+    backendServer: process.env.REACT_APP_URL,
 };
 
 module.exports = config;
